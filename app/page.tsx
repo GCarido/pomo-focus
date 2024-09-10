@@ -1,8 +1,11 @@
-import React from 'react'
+import ThemeToggler from '@/components/toggle/ThemeToggler'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      Placeholder
+      <ThemeToggler />
+    </div>
   )
 }
 
