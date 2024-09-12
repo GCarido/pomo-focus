@@ -4,6 +4,7 @@ const Home = () => {
   return (
     <main className="px-[10%] xl:px-[20%]">
       <div className="container mx-auto">
+        {/* card component here */}
         <h1 className="h1">Header 1</h1>
         <h2 className="h2">Header 2</h2>
         <h3 className="h3">Header 3</h3>
