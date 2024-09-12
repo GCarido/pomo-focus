@@ -2,7 +2,7 @@ import ThemeToggler from '@/components/toggle/ThemeToggler'
 
 const Home = () => {
   return (
-    <section className="px-[20%]">
+    <main className="px-[10%] xl:px-[20%]">
       <div className="container mx-auto">
         <h1 className="h1">Header 1</h1>
         <h2 className="h2">Header 2</h2>
@@ -11,7 +11,7 @@ const Home = () => {
         <p className="subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis odit nobis aperiam quo velit iusto obcaecati nostrum alias? Consectetur architecto sapiente debitis rerum corporis veniam harum quidem. Dolore, expedita quis!</p>
         <ThemeToggler />
       </div>
-    </section>
+    </main>
   )
 }
 
