@@ -20,7 +20,6 @@ import {
 
 import { useTheme } from "next-themes";
 import ThemeToggler from "./toggle/ThemeToggler";
-import { i } from "framer-motion/client";
 
 import Timer from "./Timer";
 
