@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react'
+import useSound from "use-sound"
+
 import { Button } from './ui/button';
+
 
 interface TimerProps {
     tabName?: string;
@@ -8,6 +11,7 @@ interface TimerProps {
 const Timer = ({ tabName = "" }: TimerProps) => {
     const [isActive, setIsActive] = useState(false);
     const [isComplete, setIsComplete] = useState(false);
+    const [playSuccess] = useSound("../sounds/success.mp3"); 
 
     const defaultSeconds = {
         'short break': 300,
@@ -29,6 +33,7 @@ const Timer = ({ tabName = "" }: TimerProps) => {
             setIsActive(false);
             setSeconds(defaultSeconds);
             setIsComplete(true);
+            playSuccess();
         }
         return () => clearInterval(interval);
     }, [isActive, seconds]);
