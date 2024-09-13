@@ -22,6 +22,8 @@ import { useTheme } from "next-themes";
 import ThemeToggler from "./toggle/ThemeToggler";
 import { i } from "framer-motion/client";
 
+import Timer from "./Timer";
+
 const PomoCard = () => {
 
   //Check if current theme is "light"
@@ -79,13 +81,19 @@ const PomoCard = () => {
             <TabsTrigger value="long-break">Long Break</TabsTrigger>
           </TabsList>
           <TabsContent value="pomodoro">
-            Pomodoro
+            <Timer 
+            tabName={`pomodoro`}
+            />
           </TabsContent>
           <TabsContent value="short-break">
-            Short Break
+          <Timer 
+            tabName={`short break`}
+            />
           </TabsContent>
           <TabsContent value="long-break">
-            Long Break
+          <Timer 
+            tabName={`long break`}
+            />
           </TabsContent>
         </Tabs>
       </CardContent>
