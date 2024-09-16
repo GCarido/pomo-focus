@@ -20,7 +20,7 @@ const FormTasks = () => {
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         setInputValue(e.target.value);
-    }
+    };
 
     const handleTask = (taskName: string): void => {
         setTaskItem([
@@ -32,29 +32,34 @@ const FormTasks = () => {
                 isEditing: false
             }
         ]);
-    }
+    };
     
     const handleButtonClick = () => {
         if (inputValue.trim() !== "") {
             handleTask(inputValue);
             setInputValue("");
         }
-    }
+    };
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
-    }
+    };
 
     const handleDelete = (id: string): void => {
         setTaskItem(taskItem.filter(task => task.id !== id));
-    }
+    };
 
     const handleComplete = (id: string): void => {
         setTaskItem(taskItem.map(task => 
             task.id === id ? { ...task, completed: !task.completed } : task
         ));
-    }
+    };
 
+    const handleEdit = (id: string): void => {
+        setTaskItem(taskItem.map(task => 
+            task.id === id ? { ...task, isEditing: !task.isEditing } : task
+        ));
+    };
     
     return (
         <div className="flex flex-col gap-y-8">
@@ -82,6 +87,7 @@ const FormTasks = () => {
             tasks={taskItem.sort((a, b) => Number(a.completed) - Number(b.completed))} 
             onDelete={handleDelete} 
             onComplete={handleComplete}
+            onEdit={handleEdit}
             />
 
         </div>
