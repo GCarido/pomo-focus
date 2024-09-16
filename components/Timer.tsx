@@ -21,7 +21,7 @@ const Timer = ({ tabName = "" }: TimerProps) => {
     const [seconds, setSeconds] = useState(defaultSeconds);
 
     useEffect(() => {
-        let interval: any;
+        let interval: NodeJS.Timeout | undefined;
 
         if (isActive) {
             setIsComplete(false);
