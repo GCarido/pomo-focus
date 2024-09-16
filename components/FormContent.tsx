@@ -1,4 +1,7 @@
+import { motion } from "framer-motion";
+
 import { CheckCircle, Edit, Trash2, ArrowUp, ArrowDown } from "lucide-react";
+
 import EditTask from "./EditTask";
 
 interface Task {
@@ -6,7 +9,7 @@ interface Task {
     taskName: string;
     completed: boolean;
     isEditing: boolean;
-};
+}
 
 interface FormContentProps {
     tasks: Task[];
@@ -16,7 +19,7 @@ interface FormContentProps {
     onSave: (id: string, updatedTaskName: string) => void;
     onMoveUp: (index: number) => void;
     onMoveDown: (index: number) => void;
-};
+}
 
 const FormContent = ({ tasks, onDelete, onComplete, onEdit, onSave, onMoveUp, onMoveDown }: FormContentProps) => {
 
@@ -51,9 +54,14 @@ const FormContent = ({ tasks, onDelete, onComplete, onEdit, onSave, onMoveUp, on
     return (
         <div className="flex flex-col gap-y-5">
             {tasks.map((task, index) => (
-                <div key={task.id}>
-
-                    {/*editing bool condition */}
+                // add smooth transition when moving items
+                <motion.div 
+                    key={task.id} 
+                    layout 
+                    initial={{ opacity: 0 }} 
+                    animate={{ opacity: 1 }} 
+                    exit={{ opacity: 0 }}
+                >
                     {task.isEditing ? (
                         <EditTask
                             itemValue={task.taskName}
@@ -61,12 +69,8 @@ const FormContent = ({ tasks, onDelete, onComplete, onEdit, onSave, onMoveUp, on
                         />
                     ) : (
                         <div className="border-2 rounded-sm border-accent-foreground/70 p-5 flex items-center justify-between">
-
-                            {/* check and text */}
                             <div className="flex gap-x-5 items-center relative">
-                                {/* move up and down */}
                                 <div className="absolute -left-4 flex flex-col gap-y-4">
-
                                     <ArrowUp
                                         size={15}
                                         className="cursor-pointer hover:dark:text-blue-500 hover:text-blue-400 touch-none"
@@ -86,7 +90,6 @@ const FormContent = ({ tasks, onDelete, onComplete, onEdit, onSave, onMoveUp, on
                                 <p className={`hover:dark:text-blue-300 hover:text-blue-400 break-words w-[120px] md:w-[320px] ${task.completed ? "line-through text-primary dark:text-primary" : ""}`}>{task.taskName}</p>
                             </div>
                             <div className="flex gap-x-2">
-                                {/* edit and delete */}
                                 <Edit
                                     size={30}
                                     className="hover:dark:text-blue-500 hover:text-blue-400"
@@ -100,11 +103,10 @@ const FormContent = ({ tasks, onDelete, onComplete, onEdit, onSave, onMoveUp, on
                             </div>
                         </div>
                     )}
-
-                </div>
+                </motion.div>
             ))}
         </div>
-    )
-}
+    );
+};
 
 export default FormContent;
