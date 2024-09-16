@@ -7,7 +7,11 @@ const variants = {
     enter: { opacity: 1 },
 };
 
-const Template = ({ children }: any) => {
+interface TemplateProps {
+    children: React.ReactNode;
+}
+
+const Template = ({ children }: TemplateProps) => {
     return (
         <div className="h-[900px]">
             <motion.main
