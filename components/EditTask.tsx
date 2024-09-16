@@ -4,13 +4,15 @@ import { Button } from './ui/button'
 
 interface EditTaskProps {
     itemValue: string;
+    onSave: (updatedTask: string) => void;
 };
 
-const EditTask = ({ itemValue }: EditTaskProps) => {
+const EditTask = ({ itemValue, onSave }: EditTaskProps) => {
     const [inputValue, setInputValue] = useState(itemValue);
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        onSave(inputValue);
     }
 
     const handleEdit = (e: React.ChangeEvent<HTMLInputElement>) => {
