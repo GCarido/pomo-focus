@@ -55,7 +55,7 @@ const FormContent = ({ tasks, onDelete, onComplete, onEdit, onSave }: FormConten
                                     className={`${task.completed ? "text-primary dark:text-primary" : ""}`}
                                     onClick={() => handleComplete(task.id)}
                                 />
-                                <p className={`hover:dark:text-blue-300 hover:text-blue-400 ${task.completed ? "line-through text-primary dark:text-primary" : ""}`}>{task.taskName}</p>
+                                <p className={`hover:dark:text-blue-300 hover:text-blue-400 break-words w-[300px] ${task.completed ? "line-through text-primary dark:text-primary" : ""}`}>{task.taskName}</p>
                             </div>
                             <div className="flex gap-x-2">
                                 {/* edit and delete */}
