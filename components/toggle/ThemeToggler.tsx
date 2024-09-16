@@ -28,7 +28,7 @@ const ThemeToggler = () => {
             {/* slider */}
             <div 
             onClick={toggleTheme}
-            className="shadow-lg outline-double outline-2 outline-primary w-[80px] rounded-md dark:outline-primary">
+            className="shadow-lg outline-double outline-2 outline-primary w-[80px] rounded-md dark:outline-primary cursor-pointer">
                 <Button
                     variant="outline"
                     size="icon"
