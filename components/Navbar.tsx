@@ -4,9 +4,9 @@ import { usePathname } from "next/navigation";
 
 
 interface NavbarProps {
-    containerStyle?: string;
-    linkStyle?: string;
-    underlineStyle?: string;
+    containerStyle: string;
+    linkStyle: string;
+    underlineStyle: string;
 }
 
 const links = [
