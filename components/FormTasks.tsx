@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 import { Button } from "./ui/button"
 import { Input } from "./ui/input"
@@ -18,6 +18,22 @@ const FormTasks = () => {
     const [inputValue, setInputValue] = useState("");
     const [taskItem, setTaskItem] = useState<Task[]>([]);
 
+
+    // Load tasks from local storage when the component mounts
+    useEffect(() => {
+        const storedTasks = localStorage.getItem("tasks");
+        if (storedTasks) {
+            setTaskItem(JSON.parse(storedTasks));
+        }
+    }, []);
+
+    // Save tasks to local storage whenever taskItem changes
+    useEffect(() => {
+        if (taskItem.length > 0) {
+            localStorage.setItem("tasks", JSON.stringify(taskItem));
+        }
+    }, [taskItem]);
+
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         setInputValue(e.target.value);
     };
@@ -33,7 +49,7 @@ const FormTasks = () => {
             }
         ]);
     };
-    
+
     const handleButtonClick = () => {
         if (inputValue.trim() !== "") {
             handleTask(inputValue);
@@ -50,13 +66,13 @@ const FormTasks = () => {
     };
 
     const handleComplete = (id: string): void => {
-        setTaskItem(taskItem.map(task => 
+        setTaskItem(taskItem.map(task =>
             task.id === id ? { ...task, completed: !task.completed } : task
         ));
     };
 
     const handleEdit = (id: string): void => {
-        setTaskItem(taskItem.map(task => 
+        setTaskItem(taskItem.map(task =>
             task.id === id ? { ...task, isEditing: !task.isEditing } : task
         ));
     };
@@ -66,7 +82,7 @@ const FormTasks = () => {
             task.id === id ? { ...task, taskName: updatedTaskName, isEditing: false } : task
         ));
     };
-    
+
     return (
         <div className="flex flex-col gap-y-8">
             {/* form input */}
@@ -87,14 +103,14 @@ const FormTasks = () => {
                     </Button>
                 </div>
             </form>
-            
+
             {/* form content */}
-            <FormContent 
-            tasks={taskItem.sort((a, b) => Number(a.completed) - Number(b.completed))} 
-            onDelete={handleDelete} 
-            onComplete={handleComplete}
-            onEdit={handleEdit}
-            onSave={handleSave}
+            <FormContent
+                tasks={taskItem.sort((a, b) => Number(a.completed) - Number(b.completed))}
+                onDelete={handleDelete}
+                onComplete={handleComplete}
+                onEdit={handleEdit}
+                onSave={handleSave}
             />
 
         </div>
