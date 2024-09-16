@@ -102,43 +102,45 @@
 
 ---
 
-##  Modules
+## Modules
 
-<details closed><summary>.</summary>
+<details closed><summary>Configuration Files</summary>
 
 | File | Summary |
 | --- | --- |
-| [postcss.config.mjs](https://github.com/GCarido/pomo-focus/blob/main/postcss.config.mjs) | <code>❯ REPLACE-ME</code> |
-| [tailwind.config.ts](https://github.com/GCarido/pomo-focus/blob/main/tailwind.config.ts) | <code>❯ REPLACE-ME</code> |
-| [components.json](https://github.com/GCarido/pomo-focus/blob/main/components.json) | <code>❯ REPLACE-ME</code> |
-| [tsconfig.json](https://github.com/GCarido/pomo-focus/blob/main/tsconfig.json) | <code>❯ REPLACE-ME</code> |
-| [package.json](https://github.com/GCarido/pomo-focus/blob/main/package.json) | <code>❯ REPLACE-ME</code> |
-| [next.config.mjs](https://github.com/GCarido/pomo-focus/blob/main/next.config.mjs) | <code>❯ REPLACE-ME</code> |
-| [package-lock.json](https://github.com/GCarido/pomo-focus/blob/main/package-lock.json) | <code>❯ REPLACE-ME</code> |
+| [postcss.config.mjs](https://github.com/GCarido/pomo-focus/blob/main/postcss.config.mjs) | Configuration file for PostCSS, used to process CSS and apply plugins. |
+| [tailwind.config.ts](https://github.com/GCarido/pomo-focus/blob/main/tailwind.config.ts) | Configuration file for Tailwind CSS, defining custom themes and settings. |
+| [components.json](https://github.com/GCarido/pomo-focus/blob/main/components.json) | JSON file outlining the structure and metadata of components used in the app. |
+| [tsconfig.json](https://github.com/GCarido/pomo-focus/blob/main/tsconfig.json) | TypeScript configuration file for setting compiler options and project settings. |
+| [package.json](https://github.com/GCarido/pomo-focus/blob/main/package.json) | NPM package configuration file listing dependencies and project metadata. |
+| [next.config.mjs](https://github.com/GCarido/pomo-focus/blob/main/next.config.mjs) | Configuration file for Next.js, managing settings and plugins for the framework. |
+| [package-lock.json](https://github.com/GCarido/pomo-focus/blob/main/package-lock.json) | Lock file ensuring consistent installation of dependencies across environments. |
 
 </details>
+
 
 <details closed><summary>components</summary>
 
 | File | Summary |
 | --- | --- |
-| [Tasks.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/Tasks.tsx) | <code>❯ REPLACE-ME</code> |
-| [Header.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/Header.tsx) | <code>❯ REPLACE-ME</code> |
-| [Logo.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/Logo.tsx) | <code>❯ REPLACE-ME</code> |
-| [FormContent.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/FormContent.tsx) | <code>❯ REPLACE-ME</code> |
-| [EditTask.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/EditTask.tsx) | <code>❯ REPLACE-ME</code> |
-| [PomoCard.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/PomoCard.tsx) | <code>❯ REPLACE-ME</code> |
-| [Timer.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/Timer.tsx) | <code>❯ REPLACE-ME</code> |
-| [FormTasks.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/FormTasks.tsx) | <code>❯ REPLACE-ME</code> |
-| [Navbar.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/Navbar.tsx) | <code>❯ REPLACE-ME</code> |
+| [Tasks.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/Tasks.tsx) | Displays the list of tasks for the current session, allowing users to manage them. |
+| [Header.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/Header.tsx) | Renders the header, typically containing navigation and branding elements. |
+| [Logo.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/Logo.tsx) | Component to display the Pomo-Focus logo. |
+| [FormContent.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/FormContent.tsx) | Handles form content related to tasks and inputs in the app. |
+| [EditTask.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/EditTask.tsx) | Provides functionality for editing existing tasks. |
+| [PomoCard.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/PomoCard.tsx) | Displays individual Pomodoro task cards. |
+| [Timer.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/Timer.tsx) | Implements the Pomodoro timer functionality for managing work sessions. |
+| [FormTasks.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/FormTasks.tsx) | Manages the task input form for adding new tasks to the session. |
+| [Navbar.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/Navbar.tsx) | Renders the navigation bar for easy access to different sections of the app. |
 
 </details>
+
 
 <details closed><summary>components.toggle</summary>
 
 | File | Summary |
 | --- | --- |
-| [ThemeToggler.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/toggle/ThemeToggler.tsx) | <code>❯ REPLACE-ME</code> |
+| [ThemeToggler.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/toggle/ThemeToggler.tsx) | Provides a toggle button to switch between light and dark themes. |
 
 </details>
 
@@ -146,7 +148,7 @@
 
 | File | Summary |
 | --- | --- |
-| [ThemeProvider.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/provider/ThemeProvider.tsx) | <code>❯ REPLACE-ME</code> |
+| [ThemeProvider.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/provider/ThemeProvider.tsx) | Manages the theme settings for the application, enabling light/dark mode toggling. |
 
 </details>
 
@@ -154,10 +156,10 @@
 
 | File | Summary |
 | --- | --- |
-| [tabs.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/ui/tabs.tsx) | <code>❯ REPLACE-ME</code> |
-| [card.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/ui/card.tsx) | <code>❯ REPLACE-ME</code> |
-| [input.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/ui/input.tsx) | <code>❯ REPLACE-ME</code> |
-| [button.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/ui/button.tsx) | <code>❯ REPLACE-ME</code> |
+| [tabs.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/ui/tabs.tsx) | Implements a tabbed interface for switching between different sections of the app. |
+| [card.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/ui/card.tsx) | Displays information in a clean, card-like format. |
+| [input.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/ui/input.tsx) | Provides styled input fields for user interaction. |
+| [button.tsx](https://github.com/GCarido/pomo-focus/blob/main/components/ui/button.tsx) | Renders customizable buttons used throughout the app. |
 
 </details>
 
@@ -165,7 +167,7 @@
 
 | File | Summary |
 | --- | --- |
-| [utils.ts](https://github.com/GCarido/pomo-focus/blob/main/lib/utils.ts) | <code>❯ REPLACE-ME</code> |
+| [utils.ts](https://github.com/GCarido/pomo-focus/blob/main/lib/utils.ts) | Contains utility functions and helper methods used across the app. |
 
 </details>
 
@@ -173,10 +175,10 @@
 
 | File | Summary |
 | --- | --- |
-| [template.tsx](https://github.com/GCarido/pomo-focus/blob/main/app/template.tsx) | <code>❯ REPLACE-ME</code> |
-| [globals.css](https://github.com/GCarido/pomo-focus/blob/main/app/globals.css) | <code>❯ REPLACE-ME</code> |
-| [page.tsx](https://github.com/GCarido/pomo-focus/blob/main/app/page.tsx) | <code>❯ REPLACE-ME</code> |
-| [layout.tsx](https://github.com/GCarido/pomo-focus/blob/main/app/layout.tsx) | <code>❯ REPLACE-ME</code> |
+| [template.tsx](https://github.com/GCarido/pomo-focus/blob/main/app/template.tsx) | Defines the base template structure for rendering the app. |
+| [globals.css](https://github.com/GCarido/pomo-focus/blob/main/app/globals.css) | Global CSS styles applied throughout the application. |
+| [page.tsx](https://github.com/GCarido/pomo-focus/blob/main/app/page.tsx) | The main page layout of the app, defining its core structure. |
+| [layout.tsx](https://github.com/GCarido/pomo-focus/blob/main/app/layout.tsx) | Defines the overall layout components for the app, managing page structure and navigation. |
 
 </details>
 
@@ -184,7 +186,7 @@
 
 | File | Summary |
 | --- | --- |
-| [page.tsx](https://github.com/GCarido/pomo-focus/blob/main/app/socials/page.tsx) | <code>❯ REPLACE-ME</code> |
+| [page.tsx](https://github.com/GCarido/pomo-focus/blob/main/app/socials/page.tsx) | Displays links to the project's social media pages. |
 
 </details>
 
@@ -192,7 +194,7 @@
 
 | File | Summary |
 | --- | --- |
-| [page.tsx](https://github.com/GCarido/pomo-focus/blob/main/app/about/page.tsx) | <code>❯ REPLACE-ME</code> |
+| [page.tsx](https://github.com/GCarido/pomo-focus/blob/main/app/about/page.tsx) | Provides information about the app and its purpose. |
 
 </details>
 
@@ -202,7 +204,7 @@
 
 ###  Prerequisites
 
-**TypeScript**: `version x.y.z`
+**TypeScript**: `version 5.6.2`
 
 ###  Installation
 
