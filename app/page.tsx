@@ -1,4 +1,4 @@
-import Card from '@/components/PomoCard'
+import PomoCard from '@/components/PomoCard'
 import Tasks from '@/components/Tasks'
 
 const Home = () => {
@@ -7,7 +7,7 @@ const Home = () => {
       <div className="container mx-auto">
         {/* card component here */}
         <div className="flex items-center flex-col">
-          <Card />
+          <PomoCard />
           <Tasks />
         </div>
       </div>
