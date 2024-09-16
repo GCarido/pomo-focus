@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 
-import { Button } from "./ui/button"
-import { Input } from "./ui/input"
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
 
-import FormContent from "./FormContent"
+import FormContent from "./FormContent";
 
-import { v4 as uuidv4 } from "uuid"
+import { v4 as uuidv4 } from "uuid";
 
 interface Task {
     id: string;
@@ -17,7 +17,6 @@ interface Task {
 const FormTasks = () => {
     const [inputValue, setInputValue] = useState("");
     const [taskItem, setTaskItem] = useState<Task[]>([]);
-
 
     // Load tasks from local storage when the component mounts
     useEffect(() => {
@@ -83,6 +82,26 @@ const FormTasks = () => {
         ));
     };
 
+    const handleMoveUp = (index: number): void => {
+        if (index > 0) {
+            const newTaskItem = [...taskItem];
+            const temp = newTaskItem[index - 1];
+            newTaskItem[index - 1] = newTaskItem[index];
+            newTaskItem[index] = temp;
+            setTaskItem(newTaskItem);
+        }
+    };
+
+    const handleMoveDown = (index: number): void => {
+        if (index < taskItem.length - 1) {
+            const newTaskItem = [...taskItem];
+            const temp = newTaskItem[index + 1];
+            newTaskItem[index + 1] = newTaskItem[index];
+            newTaskItem[index] = temp;
+            setTaskItem(newTaskItem);
+        }
+    };
+
     return (
         <div className="flex flex-col gap-y-8">
             {/* form input */}
@@ -111,10 +130,11 @@ const FormTasks = () => {
                 onComplete={handleComplete}
                 onEdit={handleEdit}
                 onSave={handleSave}
+                onMoveUp={handleMoveUp}
+                onMoveDown={handleMoveDown}
             />
-
         </div>
-    )
-}
+    );
+};
 
-export default FormTasks
+export default FormTasks;

@@ -4,7 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
+@media (hover: none) {
+  .touch-none:hover {
+      color: inherit !important;
+  }
+}
 
 @layer utilities {
   .text-balance {

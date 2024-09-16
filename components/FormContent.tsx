@@ -1,5 +1,4 @@
-import { CheckCircle, Edit, Trash2 } from "lucide-react"
-
+import { CheckCircle, Edit, Trash2, ArrowUp, ArrowDown } from "lucide-react";
 import EditTask from "./EditTask";
 
 interface Task {
@@ -15,9 +14,11 @@ interface FormContentProps {
     onComplete: (id: string) => void;
     onEdit: (id: string) => void;
     onSave: (id: string, updatedTaskName: string) => void;
+    onMoveUp: (index: number) => void;
+    onMoveDown: (index: number) => void;
 };
 
-const FormContent = ({ tasks, onDelete, onComplete, onEdit, onSave }: FormContentProps) => {
+const FormContent = ({ tasks, onDelete, onComplete, onEdit, onSave, onMoveUp, onMoveDown }: FormContentProps) => {
 
     const handleDelete = (id: string) => {
         onDelete(id);
@@ -31,25 +32,52 @@ const FormContent = ({ tasks, onDelete, onComplete, onEdit, onSave }: FormConten
         onEdit(id);
     };
 
-    const handleSave = (id: string, updatedTask: string) =>  {
+    const handleSave = (id: string, updatedTask: string) => {
         onSave(id, updatedTask);
-    }
+    };
+
+    const handleMoveUp = (index: number) => {
+        if (index > 0) {
+            onMoveUp(index);
+        }
+    };
+
+    const handleMoveDown = (index: number) => {
+        if (index < tasks.length - 1) {
+            onMoveDown(index);
+        }
+    };
 
     return (
-        <div className="cursor-pointer flex flex-col gap-y-5">
-            {tasks.map(task => (
+        <div className="flex flex-col gap-y-5">
+            {tasks.map((task, index) => (
                 <div key={task.id}>
 
                     {/*editing bool condition */}
                     {task.isEditing ? (
-                        <EditTask 
+                        <EditTask
                             itemValue={task.taskName}
                             onSave={(updatedTask) => handleSave(task.id, updatedTask)}
                         />
                     ) : (
                         <div className="border-2 rounded-sm border-accent-foreground/70 p-5 flex items-center justify-between">
+
                             {/* check and text */}
-                            <div className="flex gap-x-5 items-center">
+                            <div className="flex gap-x-5 items-center relative">
+                                {/* move up and down */}
+                                <div className="absolute -left-4 flex flex-col gap-y-4">
+
+                                    <ArrowUp
+                                        size={15}
+                                        className="cursor-pointer hover:dark:text-blue-500 hover:text-blue-400 touch-none"
+                                        onClick={() => handleMoveUp(index)}
+                                    />
+                                    <ArrowDown
+                                        size={15}
+                                        className="cursor-pointer hover:dark:text-blue-500 hover:text-blue-400 touch-none"
+                                        onClick={() => handleMoveDown(index)}
+                                    />
+                                </div>
                                 <CheckCircle
                                     size={30}
                                     className={`${task.completed ? "text-primary dark:text-primary" : ""}`}
@@ -75,10 +103,8 @@ const FormContent = ({ tasks, onDelete, onComplete, onEdit, onSave }: FormConten
 
                 </div>
             ))}
-
-
         </div>
     )
 }
 
-export default FormContent
+export default FormContent;
