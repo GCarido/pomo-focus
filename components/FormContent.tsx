@@ -2,8 +2,6 @@ import { CheckCircle, Edit, Trash2 } from "lucide-react"
 
 import EditTask from "./EditTask";
 
-import { useState } from "react";
-
 interface Task {
     id: string;
     taskName: string;
@@ -16,10 +14,10 @@ interface FormContentProps {
     onDelete: (id: string) => void;
     onComplete: (id: string) => void;
     onEdit: (id: string) => void;
+    onSave: (id: string, updatedTaskName: string) => void;
 };
 
-const FormContent = ({ tasks, onDelete, onComplete, onEdit }: FormContentProps) => {
-    const [newTask, setNewTask] = useState("");
+const FormContent = ({ tasks, onDelete, onComplete, onEdit, onSave }: FormContentProps) => {
 
     const handleDelete = (id: string) => {
         onDelete(id);
@@ -33,6 +31,10 @@ const FormContent = ({ tasks, onDelete, onComplete, onEdit }: FormContentProps) 
         onEdit(id);
     };
 
+    const handleSave = (id: string, updatedTask: string) =>  {
+        onSave(id, updatedTask);
+    }
+
     return (
         <div className="cursor-pointer flex flex-col gap-y-5">
             {tasks.map(task => (
@@ -45,6 +47,7 @@ const FormContent = ({ tasks, onDelete, onComplete, onEdit }: FormContentProps) 
                     {task.isEditing ? (
                         <EditTask 
                             itemValue={task.taskName}
+                            onSave={(updatedTask) => handleSave(task.id, updatedTask)}
                         />
                     ) : (
                         <div className="border-2 rounded-sm border-accent-foreground/70 p-5 flex items-center justify-between">
