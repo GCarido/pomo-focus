@@ -16,15 +16,15 @@ interface Task {
 
 const FormTasks = () => {
     const [inputValue, setInputValue] = useState("");
-    const [addTask, setAddTask] = useState<Task[]>([]);
+    const [taskItem, setTaskItem] = useState<Task[]>([]);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         setInputValue(e.target.value);
     }
 
     const handleTask = (taskName: string): void => {
-        setAddTask([
-            ...addTask,
+        setTaskItem([
+            ...taskItem,
             {
                 id: uuidv4(),
                 taskName,
@@ -46,11 +46,11 @@ const FormTasks = () => {
     }
 
     const handleDelete = (id: string): void => {
-        setAddTask(addTask.filter(task => task.id !== id));
+        setTaskItem(taskItem.filter(task => task.id !== id));
     }
 
     const handleComplete = (id: string): void => {
-        setAddTask(addTask.map(task => 
+        setTaskItem(taskItem.map(task => 
             task.id === id ? { ...task, completed: !task.completed } : task
         ));
     }
@@ -79,7 +79,7 @@ const FormTasks = () => {
             
             {/* form content */}
             <FormContent 
-            tasks={addTask.sort((a, b) => Number(a.completed) - Number(b.completed))} 
+            tasks={taskItem.sort((a, b) => Number(a.completed) - Number(b.completed))} 
             onDelete={handleDelete} 
             onComplete={handleComplete}
             />
