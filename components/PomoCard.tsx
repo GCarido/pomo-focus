@@ -64,7 +64,7 @@ const PomoCard = () => {
   }, [isLightMode, bgColor]);
 
   return (
-    <Card className="w-[500px]">
+    <Card className="w-[320px] md:w-[500px] bg-transparent">
       {/* toggle theme */}
       <div className="flex justify-end p-1">
         <ThemeToggler />
@@ -73,8 +73,10 @@ const PomoCard = () => {
         <p className="h2 md:text-5xl">Get Productive!</p>
       </CardHeader>
       <CardContent className="flex justify-center">
-        <Tabs defaultValue="pomodoro" onValueChange={handleTabChange}>
-          <TabsList>
+        <Tabs 
+        defaultValue="pomodoro" 
+        onValueChange={handleTabChange}>
+          <TabsList className="bg-transparent">
             <TabsTrigger value="pomodoro">Pomodoro</TabsTrigger>
             <TabsTrigger value="short-break">Short Break</TabsTrigger>
             <TabsTrigger value="long-break">Long Break</TabsTrigger>
