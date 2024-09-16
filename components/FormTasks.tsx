@@ -40,13 +40,13 @@ const FormTasks = () => {
 
     const handleTask = (taskName: string): void => {
         setTaskItem([
-            ...taskItem,
             {
                 id: uuidv4(),
                 taskName,
                 completed: false,
                 isEditing: false
-            }
+            },
+            ...taskItem,
         ]);
     };
 
