@@ -52,10 +52,10 @@ const FormContent = ({ tasks, onDelete, onComplete, onEdit, onSave }: FormConten
                             <div className="flex gap-x-5 items-center">
                                 <CheckCircle
                                     size={30}
-                                    className={`hover:dark:text-blue-500 hover:text-blue-400 ${task.completed ? "text-primary dark:text-primary" : ""}`}
+                                    className={`hover:dark:text-blue-500 hover:text-blue-400 ${task.completed ? "text-primary dark:text-primary" : "text-accent-foreground"}`}
                                     onClick={() => handleComplete(task.id)}
                                 />
-                                <p className={`hover:dark:text-blue-300 hover:text-blue-400 ${task.completed ? "line-through text-primary dark:text-primary" : ""}`}>{task.taskName}</p>
+                                <p className={`hover:dark:text-blue-300 hover:text-blue-400 ${task.completed ? "line-through text-primary dark:text-primary" : "text-accent-foreground"}`}>{task.taskName}</p>
                             </div>
                             <div className="flex gap-x-2">
                                 {/* edit and delete */}
