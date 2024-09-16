@@ -60,6 +60,12 @@ const FormTasks = () => {
             task.id === id ? { ...task, isEditing: !task.isEditing } : task
         ));
     };
+
+    const handleSave = (id: string, updatedTaskName: string): void => {
+        setTaskItem(taskItem.map(task =>
+            task.id === id ? { ...task, taskName: updatedTaskName, isEditing: false } : task
+        ));
+    };
     
     return (
         <div className="flex flex-col gap-y-8">
@@ -88,6 +94,7 @@ const FormTasks = () => {
             onDelete={handleDelete} 
             onComplete={handleComplete}
             onEdit={handleEdit}
+            onSave={handleSave}
             />
 
         </div>
