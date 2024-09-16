@@ -40,10 +40,7 @@ const FormContent = ({ tasks, onDelete, onComplete, onEdit, onSave }: FormConten
             {tasks.map(task => (
                 <div key={task.id}>
 
-                    {/* test */}
-                    {task.isEditing ? "true" : "false"} {task.taskName}
-
-                    {/* test editing condition */}
+                    {/*editing bool condition */}
                     {task.isEditing ? (
                         <EditTask 
                             itemValue={task.taskName}
