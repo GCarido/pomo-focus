@@ -67,7 +67,7 @@ const PomoCard = () => {
         <ThemeToggler />
       </div>
       <CardHeader className="items-center">
-        <p className="h2 md:text-5xl">Get Productive!</p>
+        <p className="h2 md:text-5xl">Be Productive!</p>
       </CardHeader>
       <CardContent className="flex justify-center">
         <Tabs 
