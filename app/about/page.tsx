@@ -2,7 +2,7 @@ import React from 'react'
 
 const About = () => {
   return (
-    <section className="">
+    <main className="px-[10%] xl:px-[20%]">
       <div className="container mx-auto">
         <div>
           <h2 className="h2">
@@ -11,7 +11,7 @@ const About = () => {
           <p className="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ex sint expedita corporis iure ratione reiciendis necessitatibus debitis culpa totam doloribus, doloremque, placeat at, tempora iusto perspiciatis sit. Iste, nemo?</p>
         </div>
       </div>
-    </section>
+    </main>
   )
 }
 
