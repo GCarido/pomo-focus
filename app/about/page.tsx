@@ -4,7 +4,7 @@ const About = () => {
   return (
     <main className="px-[10%] xl:px-[20%]">
       <div className="container mx-auto">
-        <div>
+        <div className="flex flex-col gap-y-4">
           <h2 className="h2">
               What is Pomodoro?
           </h2>
