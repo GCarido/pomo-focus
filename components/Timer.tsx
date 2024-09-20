@@ -36,7 +36,7 @@ const Timer = ({ tabName = "" }: TimerProps) => {
             playSuccess();
         }
         return () => clearInterval(interval);
-    }, [isActive, seconds]);
+    }, [isActive]);
 
     const reset = () => {
         setSeconds(defaultSeconds);
