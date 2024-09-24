@@ -5,7 +5,7 @@ const About = () => {
     <main className="px-[10%] xl:px-[20%]">
       <div className="container mx-auto">
         <div className="flex flex-col gap-y-3">
-          <h2 className="h2">
+          <h2 className="h2 mb-4">
               What is Pomodoro?
           </h2>
           <p className="subtitle text-justify">Pomodoro is a super simple technique that helps you stay focused and get more done in less time. It’s all about working in short bursts, typically 25 minutes, followed by a short break. The idea is to make your work time more productive and less tiring.</p>
