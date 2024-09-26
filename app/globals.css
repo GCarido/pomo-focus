@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +6,7 @@
 
 @media (hover: none) {
   .touch-none:hover {
-      color: inherit !important;
+    color: inherit !important;
   }
 }
 
@@ -15,7 +15,6 @@
     text-wrap: balance;
   }
 }
-
 
 @layer base {
   :root {
@@ -44,6 +43,8 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+    --highlight-secondary: 357, 100%, 75%;
+    --highlight-tertiary: 200, 100%, 50%;
   }
 
   .dark {
@@ -72,9 +73,11 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --highlight-default: 205, 100%, 90%;
+    --highlight-secondary: 357, 100%, 80%;
+    --highlight-tertiary: 200, 100%, 60%;
   }
 }
-
 
 @layer base {
   * {
@@ -83,11 +86,9 @@
 
   body {
     @apply bg-background text-foreground;
-    transition: background-color 0.5s ease; 
+    transition: background-color 0.5s ease;
   }
-
 }
-
 
 .h1 {
   @apply text-6xl xl:text-[72px] xl:leading-[90px] tracking-[1px] font-bold;
@@ -110,6 +111,24 @@
 }
 
 .li-styling > li {
-  @apply pl-2
+  @apply pl-2;
+}
+
+.highlight-default,
+.highlight-secondary,
+.highlight-tertiary {
+  @apply font-bold;
+}
+
+.highlight-default {
+  color: hsl(var(--highlight-default));
+}
+
+.highlight-secondary {
+  color: hsl(var(--highlight-secondary));
+}
+
+.highlight-tertiary {
+  color: hsl(var(--highlight-tertiary));
 }
 
