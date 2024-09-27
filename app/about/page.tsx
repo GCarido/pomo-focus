@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const About = () => {
   return (
@@ -28,6 +29,7 @@ const About = () => {
             take the necessary breaks to recharge.
           </p>
           <ol className="list-decimal list-outside pl-5 subtitle marker:text-foreground marker:font-bold flex flex-col gap-y-6 li-styling text-justify">
+            {/* first item */}
             <li>
               Start by choosing a specific task you need to work on. It could be
               something on your to-do list, a work project, or even a personal
@@ -35,6 +37,15 @@ const About = () => {
               thing at a time, so pick a task that’s clear and manageable for
               the next <span className="highlight-default">25 minutes</span>.
             </li>
+            <Image
+              src="/images/1-pomo-focus.png"
+              width={500}
+              height={500}
+              priority
+              alt="first-pomo-list"
+              className="self-center"
+            />
+            {/* second item */}
             <li>
               Set a timer for{" "}
               <span className="highlight-default">25 minutes</span>. You can use
@@ -43,6 +54,14 @@ const About = () => {
               the task and commit to working without interruptions. This focused
               work session helps you make progress without distractions.
             </li>
+            <Image
+              src="/images/2-pomo-focus.png"
+              width={500}
+              height={500}
+              priority
+              alt="first-pomo-list"
+              className="self-center"
+            />
             <li>
               When the <span className="highlight-default">25 minutes</span> are
               up and the timer goes off, take a short{" "}
@@ -52,6 +71,14 @@ const About = () => {
               for giving your mind a rest and recharging before the next round
               of focused work.
             </li>
+            <Image
+              src="/images/3-pomo-focus.png"
+              width={500}
+              height={500}
+              priority
+              alt="first-pomo-list"
+              className="self-center"
+            />
             <li>
               After completing 3-4 Pomodoro sessions (
               <span className="highlight-default">25 minutes</span> of work
@@ -61,6 +88,14 @@ const About = () => {
               this time to relax, unwind, or do something enjoyable, giving your
               brain a chance to reset before diving back into your tasks.
             </li>
+            <Image
+              src="/images/4-pomo-focus.png"
+              width={500}
+              height={500}
+              priority
+              alt="first-pomo-list"
+              className="self-center"
+            />
           </ol>
         </div>
       </div>
